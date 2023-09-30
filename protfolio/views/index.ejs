@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kumar Amrendram</title>
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <style>
+    .text-container {
+      margin: 2rem 0;
+      border-left: 2px solid white;
+    }
+
+    .text-container h2 {
+      margin: 0;
+    }
+  </style>
+
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <section class="hero-section overflow-hidden">
+      <div
+        class="main flex justify-evenly min-[768px]:h-screen md:flex-row flex-col max-h-screen"
+        style="margin: 20px"
+      >
+        <div
+          class="banner-text align-baseline self-center justify-center min-[768px]:w-1/3"
+        >
+          <h1 class="text-6xl text-black font-semibold">
+            Hello, I am <br />
+            <span class="text-container"><span id="text"></span></span>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,
+            accusantium, quaerat commodi laborum tempora dicta illum ea vel
+            aspernatur sit minima magnam soluta maxime dolorum iusto.
+            Exercitationem iusto iure sequi.
+          </p>
+        </div>
+        <div
+          class="banner-image self-center min-[768px]:w-1/3 min-[360px]:w-4/5 min-[360px]:mt-10"
+        >
+          <img class="-ms-8 lg:ms-0" src="img/page-not-found.svg" alt=""  />
+          <div class="circles">
+            <div
+              class="absolute circle mix-blend-multiply animate-moveCircle filter blur-xl -z-10 animation-delay-2000 bg-orange-200 right-4 lg:-right-20 rounded-full mt-40 lg:mt-0"
+            ></div>
+            <div
+              class="absolute circle mix-blend-multiply animate-moveCircle filter blur-xl -z-10 bg-yellow-200 rounded-full  right-0 lg:-right-40 overflow-hidden mt-40 lg:mt-0"
+            ></div>
+            <div
+              class="absolute circle mix-blend-multiply animate-moveCircle filter blur-xl -z-10 animation-delay-4000 bg-pink-200 right-20 lg:-right-72 rounded-full mt-40 lg:mt-0"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="skills">
+      <h1 class="text-4xl text-center font-semibold  mb-10">This is skills section</h1>
+      <div class="skill-cards flex w-full justify-evenly flex-wrap">
+        <div class="card w-64 h-40 bg-white drop-shadow-2xl border-b-2 rounded-lg mt-4">
+          <h1 class="text-3xl ms-2">PHP</h1>
+          <p class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione totam aperiam voluptatum error</p>
+          <div class="bg-slate-400 h-2 w-full absolute bottom-0 rounded-md"></div>
+        </div>
+        <div class="card w-64 h-40 bg-white drop-shadow-2xl border-b-2 rounded-lg mt-4">
+          <h1 class="text-3xl ms-2">EXPRESS</h1>
+          <p class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione totam aperiam voluptatum error</p>
+          <div class="bg-slate-400 h-2 w-full absolute bottom-0 rounded-md"></div>
+        </div>
+        <div class="card w-64 h-40 bg-white drop-shadow-2xl border-b-2 rounded-lg mt-4">
+          <h1 class="text-3xl ms-2">REACT</h1>
+          <p class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione totam aperiam voluptatum error</p>
+          <div class="bg-slate-400 h-2 w-full absolute bottom-0 rounded-md"></div>
+        </div>
+        <div class="card w-64 h-40 bg-white drop-shadow-2xl border-b-2 rounded-lg mt-4">
+          <h1 class="text-3xl ms-2">MongoDB</h1>
+          <p class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ratione totam aperiam voluptatum error</p>
+          <div class="bg-slate-400 h-2 w-full absolute bottom-0 rounded-md"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div ><h1 class="text-3xl font-semibold">This is projects</h1></div>
+      <div class="cards">
+        <div class="card drop-shadow-lg bg-cyan-200 w-fit">
+          <img src="/img/team.jpg" alt="" srcset="" class="w-[250px]">
+          <p>Full Stack Developer, Web & Mobile App Development.</p>
+        </div>
+      </div>
+    </section>
+    <%- include("./partials/footer.ejs") %>
+    <script>
+      const textContainer = document.getElementById("text");
+      const words = ["Batman", "developer", "designer", "coder"];
+      let wordIndex = 0;
+      let charIndex = 0;
+
+      function animateText() {
+        if (charIndex < words[wordIndex].length) {
+          textContainer.textContent += words[wordIndex][charIndex];
+          charIndex++;
+          setTimeout(animateText, 100);
+        } else {
+          setTimeout(deleteText, 1000);
+        }
+      }
+
+      function deleteText() {
+        if (charIndex > 0) {
+          textContainer.textContent = words[wordIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(deleteText, 50);
+        } else {
+          setTimeout(animateNextText, 500);
+        }
+      }
+
+      function animateNextText() {
+        textContainer.textContent = ""; // Clear previous content
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(animateText, 500);
+      }
+
+      animateText();
+    </script>
+  </body>
+</html>

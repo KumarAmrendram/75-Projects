@@ -1,0 +1,78 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    <div class="flex justify-center flex-col items-center border-2 border-gray-900/10 m-10 mx-4 px-2 lg:m-20">
+    <h1 class="text-2xl text-center my-4">Create New Listing</h1>
+        <form action="/listings" method="POST">
+            <div class="">
+              <label for="title" class="text-bold">Title</label><br>
+              <input
+                type="text"
+                placeholder="title"
+                name="listing[title]"
+                id="title"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+              />
+            </div>
+      
+            <div class="">
+              <label for="description" class="text-semibold">Description</label><br>
+      
+              <textarea
+                placeholder="description"
+                name="listing[description]"
+                id="description"
+                rows="4"
+                cols="50"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+                style="resize: none;"
+              ></textarea
+              >
+            </div>
+            <div class="">
+              <label for="iamge" class="text-semibold">Image</label><br>
+              <input
+                type="text"
+                placeholder="image url"
+                name="listing[image]"
+                id="image"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+              />
+            </div>
+            <div class="">
+              <label for="price" class="text-semibold">Price</label><br>
+              <input
+                type="number"
+                placeholder="price"
+                name="listing[price]"
+                id="price"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+              />
+            </div>
+            <div class="">
+              <label for="location" class="text-semibold">Location</label><br>
+              <input
+                type="text"
+                placeholder="location"
+                name="listing[location]"
+                id="location"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+              />
+            </div>
+            <div class="">
+              <label for="country" class="text-semibold">Country</label><br>
+              <input
+                type="text"
+                placeholder="country"
+                name="listing[country]"
+                id="country"
+                class=" py-2 pe-8 ps-2 my-1 rounded-lg w-full"
+              />
+            </div>
+            <div class="">
+              <button type="submit" class="py-2 px-4 bg-blue-400 rounded-lg my-2">add listing</button>
+            </div>
+          </form>
+    </form>
+    </div>
+</body>

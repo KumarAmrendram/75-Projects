@@ -1,0 +1,32 @@
+body {
+    background-color: pink !important;
+}
+
+/* NAVBAR */
+nav div > .nav-item {
+    position: relative;
+}
+
+
+ .nav-item:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: red;
+    bottom: -10px;
+    left: 0;
+    transition: 300ms;
+}
+
+ .nav-item:hover:after {
+    width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

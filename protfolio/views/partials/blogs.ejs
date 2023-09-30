@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog App with tailwind</title>
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body class="">
+    <%- include("./header.ejs") %>
+
+    <div class="blogs mt-5 flex flex-wrap">
+      <!-- First Column -->
+      <div class="lg:w-2/5 w-full p-4">
+        <% for (let i = 0; i < blogs.length; i += 2) { %>
+          <div class="blog-card drop-shadow-xl bg-white flex flex-col rounded cursor-pointer" onclick="window.location.href='./blog/<%= blogs[i].name %>'">
+            <img src="<%= blogs[i].image %>" alt="" srcset="" class="rounded" />
+            <h1 class="text-xl font-semibold mt-3 p-3"><%= blogs[i].name %></h1>
+            <p class="text-lg text-gray-700 px-3"><%= blogs[i].content %></p>
+            <div class="bottom-div px-3 pb-3 flex justify-end">
+              <p class="text-lg text-gray-700">Januray 27</p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    
+      <!-- Second Column -->
+      <div class="lg:w-2/5 w-full p-4 lg:justify-start">
+        <% for (let i = 1; i < blogs.length; i += 2) { %>
+          <div class="blog-card drop-shadow-xl bg-white flex flex-col rounded cursor-pointer" onclick="window.location.href='./blog/<%= blogs[i].name %>'"  >
+            <img src="<%= blogs[i].image %>" alt="" srcset="" class="rounded" />
+            <h1 class="text-xl font-semibold mt-3 p-3"><%= blogs[i].name %></h1>
+            <p class="text-lg text-gray-700 px-3"><%= blogs[i].content %></p>
+            <div class="bottom-div px-3 pb-3 flex justify-end">
+              <p class="text-lg text-gray-700">Januray 27</p> 
+            </div>
+          </div>
+        <% } %>
+      </div>
+      <div class="lg:w-1/5" style="color: transparent;">
+        this is demo area
+      </div>  
+    </div>
+
+  </body>
+</html>

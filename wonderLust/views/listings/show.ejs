@@ -1,0 +1,17 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+  <div class="container p-4 lg:ps-40">
+    <h1 class="text-3xl font-semibold my-2"><%= listing.title %></h1>
+      <h2 class="my-2"><%= listing.description %></h2>
+      <img class="h-96 w-96 rounded-xl" src="<%= listing.image %>" alt="" srcset="" />
+      <p class="my-1 font-bold">&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
+      <p class="my-1 font-semibold"><%= listing.location %>, <%= listing.country %></p>
+      <p class="my-1"></p>
+    <div class="flex">
+        <a class="py-2 px-8 bg-pink-300 rounded-lg" href="/listings/<%= listing._id %>/edit">Edit</a>
+        <form action="/listings/<%= listing._id %>?_method=DELETE" method="post">
+          <button class="py-2 px-8 bg-red-400 rounded-lg mx-2">Delete</button>
+        </form>
+    </div>
+  </div>
+</body>

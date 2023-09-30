@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* body {
+  background: rgb(124, 198, 254);
+  background: radial-gradient(
+    circle,
+    rgba(124, 198, 254, 1) 0%,
+    rgba(231, 187, 227, 1) 100%
+  );
+} */
+
+.circles {
+  position: absolute;
+  top: 26%;
+  right: 33%;
+}
+
+.circle {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
+}
+.text-container {
+  height: 2rem;
+}
+
+.text-container h2 {
+  margin: 0;
+}
+
+.blogs {
+  width: 100%;
+}
+
+.blog-card {
+  margin: 10px auto;
+  width: 70% !important;
+  /* background-color: #000; */
+}
+
+.blog-card img {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.bottom-div img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .blog-card {
+    width: 50%;
+  }
+}
+
+.logo {
+  height: 100px;
+}
+
+.logo img {
+  margin-top: -7px;
+  height: 70px;
+}
